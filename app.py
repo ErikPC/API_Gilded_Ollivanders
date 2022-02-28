@@ -1,28 +1,19 @@
-from distutils.command.clean import clean
-from flask import Flask
-from datetime import datetime
-import time
-import re
-app = Flask(__name__)
+from flask import Flask, jsonify, request
+from flask_restful import Resource, Api
+from controller.Wellcome import Wellcome
+from controller.Item import Item
+from controller.Stock import Stock
 
 
-@app.route("/")
-def home():
-    return "Try to Flask"
+def create_app():
+    app = Flask(__name__)
+    api = Api(app, catch_all_404s=True)
+    api.add_resource(Wellcome, "/")
+    api.add_resource(Item,"/item/<name>")
+    api.add_resource(Stock, "/stock")
+    return app
 
-@app.route("/hello/<name>")
-def hello_there(name):
-    now = datetime.now()
-    formatted_now = now.strftime("%A, %d %B, %Y at %X")
-
-    match_object = re.match("[a-zA-Z]+", name)
-
-    if match_object:
-        clean_name = match_object.group(0)
-    else:
-        clean_name = "Friend"
-    content = "Hello there, " + clean_name + "! It's " + formatted_now
-    return content
 
 if __name__ == "__main__":
-    app.run()
+    app = create_app()
+    app.run(debug=True)
