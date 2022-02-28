@@ -18,5 +18,5 @@ stock = [
         "name": "Conjured",
         "quality": 6,
         "sell_in": 10,
-    }
+    },
 ]

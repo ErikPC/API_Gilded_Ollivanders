@@ -9,7 +9,7 @@ def create_app():
     app = Flask(__name__)
     api = Api(app, catch_all_404s=True)
     api.add_resource(Wellcome, "/")
-    api.add_resource(Item,"/item/<name>")
+    api.add_resource(Item, "/item/<name>")
     api.add_resource(Stock, "/stock")
     return app
 
