@@ -1,5 +1,5 @@
-from flask import Flask, jsonify, request
-from flask_restful import Resource, Api
+from flask import Flask
+from flask_restful import Api
 from resources.quality import Quality
 
 from resources.sellIn import SellIn
