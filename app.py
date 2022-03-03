@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
-from controller.Wellcome import Wellcome
-from controller.Item import Item
-from controller.Stock import Stock
+
+from resources.sellIn import SellIn
+from resources.wellcome import Wellcome
+from resources.item import Item
+from resources.stock import Stock
 
 
 def create_app():
@@ -10,6 +12,7 @@ def create_app():
     api = Api(app, catch_all_404s=True)
     api.add_resource(Wellcome, "/")
     api.add_resource(Item, "/item/<name>")
+    api.add_resource(SellIn,"/item/sell-in/<sell_in>")
     api.add_resource(Stock, "/stock")
     return app
 
