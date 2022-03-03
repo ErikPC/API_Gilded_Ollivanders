@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
+from resources.quality import Quality
 
 from resources.sellIn import SellIn
 from resources.wellcome import Wellcome
@@ -13,6 +14,7 @@ def create_app():
     api.add_resource(Wellcome, "/")
     api.add_resource(Item, "/item/<name>")
     api.add_resource(SellIn,"/item/sell-in/<sell_in>")
+    api.add_resource(Quality,"/item/quality/<quality>")
     api.add_resource(Stock, "/stock")
     return app
 
