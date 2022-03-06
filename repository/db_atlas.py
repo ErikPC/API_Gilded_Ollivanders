@@ -13,3 +13,7 @@ class DB_atlas:
     @staticmethod
     def get_quality(quality):
         return list(conectar_BBDD().find({"quality": int(quality)}, {"_id": False}))
+
+    @staticmethod
+    def get_sell_in(sell_in):
+        return list(conectar_BBDD().find({"sell_in": int(sell_in)}, {"_id": False}))
