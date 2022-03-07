@@ -13,3 +13,7 @@ class Service:
     @staticmethod
     def get_quality(quality):
         return DB_atlas.get_quality(quality)
+
+    @staticmethod
+    def get_item(item):
+        return DB_atlas.get_item(item)
