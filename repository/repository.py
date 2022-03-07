@@ -20,6 +20,6 @@ class DB_atlas:
 
     @staticmethod
     def delete_item(name, sell_in, quality):
-        conectar_BBDD().delete_one(
-            {"name": name, "sell_in": sell_in, "quality": quality}
+        return conectar_BBDD().delete_one(
+            {"name": name, "sell_in": int(sell_in), "quality": int(quality)}
         )
