@@ -1,7 +1,7 @@
 from mongoengine import connect
 import certifi
 
-DB_URI = "mongodb+srv://<User>:<Password>@ollivanders.ovnru.mongodb.net/ollivanders?retryWrites=true&w=majority"
+DB_URI = "mongodb+srv://Administrador:Ollivanders123@ollivanders.ovnru.mongodb.net/ollivanders?retryWrites=true&w=majority"
 COLLECTION = "ollivanders"
 
 

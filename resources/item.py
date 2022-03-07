@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from repository.db_atlas import DB_atlas
+from repository.repository import DB_atlas
 
 
 class Item(Resource):
