@@ -1,8 +1,6 @@
+from repository.configuration import DB_URI
 from mongoengine import connect
 import certifi
-
-DB_URI = "mongodb+srv://Administrador:Ollivanders123@ollivanders.ovnru.mongodb.net/ollivanders?retryWrites=true&w=majority"
-COLLECTION = "ollivanders"
 
 
 def conectar_BBDD():
