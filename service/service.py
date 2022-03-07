@@ -17,3 +17,17 @@ class Service:
     @staticmethod
     def get_item(item):
         return DB_atlas.get_item(item)
+
+    @staticmethod
+    def delete_item(name, quality, sell_in):
+        eliminado = DB_atlas.delete_item(name, quality, sell_in)
+        return {
+            "Item": {
+                "name": name,
+                "quality": quality,
+                "sell_in": sell_in,
+            },
+            "Eliminado": True
+            if eliminado.deleted_count == 1
+            else "No se ha encontrado item",
+        }
