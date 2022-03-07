@@ -1,7 +1,7 @@
 from flask_restful import Resource
-from repository.repository import DB_atlas
+from service.service import Service
 
 
 class Stock(Resource):
     def get(self):
-        return DB_atlas.get_stock()
+        return Service.get_stock()
