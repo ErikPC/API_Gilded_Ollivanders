@@ -19,13 +19,13 @@ class Service:
         return DB_atlas.get_item(item)
 
     @staticmethod
-    def delete_item(name, sell_in, quality):
-        eliminado = DB_atlas.delete_item(name, sell_in, quality)
+    def delete_item(name, quality, sell_in):
+        eliminado = DB_atlas.delete_item(name, quality, sell_in)
         return {
             "Item": {
                 "name": name,
-                "sell_in": sell_in,
                 "quality": quality,
+                "sell_in": sell_in,
             },
             "Eliminado": True
             if eliminado.deleted_count == 1

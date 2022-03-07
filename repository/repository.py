@@ -19,7 +19,7 @@ class DB_atlas:
         return list(conectar_BBDD().find({"sell_in": int(sell_in)}, {"_id": False}))
 
     @staticmethod
-    def delete_item(name, sell_in, quality):
+    def delete_item(name, quality, sell_in):
         return conectar_BBDD().delete_one(
-            {"name": name, "sell_in": int(sell_in), "quality": int(quality)}
+            {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
         )
