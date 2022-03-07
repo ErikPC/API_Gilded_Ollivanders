@@ -9,3 +9,7 @@ class Service:
     @staticmethod
     def get_sell_in(sell_in):
         return DB_atlas.get_sell_in(sell_in)
+
+    @staticmethod
+    def get_quality(quality):
+        return DB_atlas.get_quality(quality)
