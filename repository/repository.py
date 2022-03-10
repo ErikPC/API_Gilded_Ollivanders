@@ -32,3 +32,9 @@ class DB_atlas:
         return conectar_BBDD().delete_one(
             {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
         )
+
+    @staticmethod
+    def create_item(name, quality, sell_in):
+        return conectar_BBDD().insert_one(
+            {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
+        )

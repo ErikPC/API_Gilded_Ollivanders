@@ -35,3 +35,11 @@ class Service:
             if eliminado.deleted_count == 1
             else "No se ha encontrado item",
         }
+
+    @staticmethod
+    def create_item(name, quality, sell_in):
+        comprobacion = DB_atlas.create_item(name, quality, sell_in)
+        return {
+            "Item": {"name": name, "quality": quality, "sell_in": sell_in},
+            "Creado": True if comprobacion.inserted_id else "No se ha creado el item",
+        }

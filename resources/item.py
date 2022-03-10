@@ -11,3 +11,6 @@ class Item(Resource):
 
     def delete(self, name, quality, sell_in):
         return Service.delete_item(name, quality, sell_in)
+
+    def post(self, name, quality, sell_in):
+        return Service.create_item(name, quality, sell_in)
