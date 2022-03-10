@@ -19,8 +19,8 @@ class Service:
         return DB_atlas.get_item(item)
 
     @staticmethod
-    def get_item(name, quality, sell_in):
-        return DB_atlas.get_item(name, quality, sell_in)
+    def get_specific_item(name, quality, sell_in):
+        return DB_atlas.get_specific_item(name, quality, sell_in)
 
     @staticmethod
     def delete_item(name, quality, sell_in):

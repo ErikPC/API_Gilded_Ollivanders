@@ -11,7 +11,7 @@ class DB_atlas:
         return list(conectar_BBDD().find({"name": name}, {"_id": False}))
 
     @staticmethod
-    def get_item(name, quality, sell_in):
+    def get_specific_item(name, quality, sell_in):
         return list(
             conectar_BBDD().find(
                 {"name": name, "quality": int(quality), "sell_in": int(sell_in)},
