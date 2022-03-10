@@ -1,7 +1,7 @@
 from flask_restful import Resource
-from repository.db import DB
+from service.service import Service
 
 
 class Item(Resource):
     def get(self, name):
-        return DB.get_item(name)
+        return Service.get_item(name)

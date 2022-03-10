@@ -1,7 +1,7 @@
 from flask_restful import Resource
-from repository.db import DB
+from service.service import Service
 
 
 class SellIn(Resource):
-    def get(self , sell_in):
-        return DB.get_sell_in(sell_in)
+    def get(self, sell_in):
+        return Service.get_sell_in(sell_in)

@@ -1,6 +1,7 @@
 from flask_restful import Resource
-from repository.db import DB
+from service.service import Service
+
 
 class Quality(Resource):
     def get(self, quality):
-        return DB.get_quality(quality)
+        return Service.get_quality(quality)
