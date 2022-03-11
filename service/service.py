@@ -1,4 +1,7 @@
+from domain.Backstage import Backstage
+from domain.Conjured import Conjured
 from repository.repository import DB_atlas
+from domain.Aged_brie import AgedBrie
 
 
 class Service:
@@ -46,4 +49,18 @@ class Service:
 
     @staticmethod
     def update_stock():
-        pass
+        stock = Service.get_stock()
+        for item in stock:
+            values = list(item.values())
+            name = values[0]
+            quality = values[1]
+            sell_in = values[2]
+
+            if item["name"] == "Conjured":
+                conjured = Conjured(name, quality, sell_in)
+                conjured.updateQuality()
+                quality = conjured.getQuality()
+                sell_in = conjured.getSell_in()
+                filter = item
+                newvalues = {"$set": {"quality": quality, "sell_in": sell_in}}
+                DB_atlas.update_item(filter, newvalues)
