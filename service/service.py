@@ -43,3 +43,7 @@ class Service:
             "Item": {"name": name, "quality": quality, "sell_in": sell_in},
             "Creado": True if comprobacion.inserted_id else "No se ha creado el item",
         }
+
+    @staticmethod
+    def update_stock():
+        pass
