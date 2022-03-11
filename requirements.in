@@ -1,0 +1,6 @@
+certifi==2021.10.8
+mongoengine==0.24.0
+pymongo==4.0
+Flask-RESTful==0.3.9
+Flask==2.0.3
+dnspython==2.2.0
