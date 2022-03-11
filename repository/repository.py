@@ -38,3 +38,9 @@ class DB_atlas:
         return conectar_BBDD().insert_one(
             {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
         )
+
+    @staticmethod
+    def update_item(name, quality, sell_in):
+        return conectar_BBDD().update_one(
+            {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
+        )
