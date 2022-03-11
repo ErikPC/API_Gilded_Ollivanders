@@ -40,7 +40,6 @@ class DB_atlas:
         )
 
     @staticmethod
-    def update_item(name, quality, sell_in):
-        return conectar_BBDD().update_one(
-            {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
-        )
+    def update_item(filtro, newvalues):
+        filter = filtro
+        return conectar_BBDD().update_one(filter, newvalues)
