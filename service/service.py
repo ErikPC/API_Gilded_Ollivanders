@@ -58,3 +58,19 @@ class Service:
                 }
             }
             DB_atlas.update_item(item, new_values)
+
+    @staticmethod
+    def update_item(name):
+        stock = Service.get_stock()
+
+        for item in stock:
+            if item["name"] == name:
+                item_creado = create_item(item)
+                item_creado.updateQuality()
+                new_values = {
+                    "$set": {
+                        "quality": item_creado.getQuality(),
+                        "sell_in": item_creado.getSell_in(),
+                    }
+                }
+                DB_atlas.update_item(item, new_values)
