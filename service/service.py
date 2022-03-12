@@ -52,14 +52,12 @@ class Service:
     def update_stock():
         stock = Service.get_stock()
         for item in stock:
-            item = create_item(item)
-            item.update_quality()
-
-            if item["name"] == "Conjured":
-                conjured = Conjured(name, quality, sell_in)
-                conjured.updateQuality()
-                quality = conjured.getQuality()
-                sell_in = conjured.getSell_in()
-                filter = item
-                newvalues = {"$set": {"quality": quality, "sell_in": sell_in}}
-                DB_atlas.update_item(filter, newvalues)
+            item_creado = create_item(item)
+            item_creado.updateQuality()
+            new_values = {
+                "$set": {
+                    "quality": item_creado.getQuality(),
+                    "sell_in": item_creado.getSell_in(),
+                }
+            }
+            DB_atlas.update_item(item, new_values)
