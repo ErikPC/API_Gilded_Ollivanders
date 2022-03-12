@@ -3,5 +3,6 @@ from service.service import Service
 
 
 class Update_stock(Resource):
-    def get():
+    def get(self):
+        Service.update_stock()
         return Service.get_stock()

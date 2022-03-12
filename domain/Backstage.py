@@ -3,8 +3,8 @@ from domain.updateable import updateable
 
 
 class Backstage(Item, updateable):
-    def __init__(self, name, sell_in, quality):
-        Item.__init__(self, name, sell_in, quality)
+    def __init__(self, name, quality, sell_in):
+        Item.__init__(self, name, quality, sell_in)
 
     def getSell_in(self):
         return self.sell_in

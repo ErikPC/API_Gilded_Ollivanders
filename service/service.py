@@ -1,4 +1,8 @@
+from domain.Backstage import Backstage
+from domain.Conjured import Conjured
 from repository.repository import DB_atlas
+from domain.Aged_brie import AgedBrie
+from service.create_item import create_item
 
 
 class Service:
@@ -43,3 +47,17 @@ class Service:
             "Item": {"name": name, "quality": quality, "sell_in": sell_in},
             "Creado": True if comprobacion.inserted_id else "No se ha creado el item",
         }
+
+    @staticmethod
+    def update_stock():
+        stock = Service.get_stock()
+        for item in stock:
+            item_creado = create_item(item)
+            item_creado.updateQuality()
+            new_values = {
+                "$set": {
+                    "quality": item_creado.getQuality(),
+                    "sell_in": item_creado.getSell_in(),
+                }
+            }
+            DB_atlas.update_item(item, new_values)

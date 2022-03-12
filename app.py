@@ -19,7 +19,7 @@ def create_app():
     api.add_resource(SellIn, "/item/sell-in/<sell_in>")
     api.add_resource(Quality, "/item/quality/<quality>")
     api.add_resource(Stock, "/stock")
-    api.add_resource(Update_stock, "/update-stock")
+    api.add_resource(Update_stock, "/stock/update-stock")
     return app
 
 
