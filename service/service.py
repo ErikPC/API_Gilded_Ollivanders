@@ -2,6 +2,7 @@ from domain.Backstage import Backstage
 from domain.Conjured import Conjured
 from repository.repository import DB_atlas
 from domain.Aged_brie import AgedBrie
+from service.create_item import create_item
 
 
 class Service:
@@ -51,10 +52,8 @@ class Service:
     def update_stock():
         stock = Service.get_stock()
         for item in stock:
-            values = list(item.values())
-            name = values[0]
-            quality = values[1]
-            sell_in = values[2]
+            item = create_item(item)
+            item.update_quality()
 
             if item["name"] == "Conjured":
                 conjured = Conjured(name, quality, sell_in)
