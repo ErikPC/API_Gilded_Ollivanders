@@ -4,6 +4,7 @@ from resources.quality import Quality
 
 from resources.sellIn import SellIn
 from resources.specific_item import Specific_item
+from resources.update_item import Update_item
 from resources.update_sotck import Update_stock
 from resources.wellcome import Wellcome
 from resources.item import Item
@@ -20,6 +21,7 @@ def create_app():
     api.add_resource(Quality, "/item/quality/<quality>")
     api.add_resource(Stock, "/stock")
     api.add_resource(Update_stock, "/stock/update-stock")
+    api.add_resource(Update_item, "/item/update/<name>")
     return app
 
 
