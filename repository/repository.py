@@ -40,6 +40,5 @@ class DB_atlas:
         )
 
     @staticmethod
-    def update_item(filtro, newvalues):
-        filter = filtro
-        return conectar_BBDD().update_one(filter, newvalues)
+    def update_item(filtro, new_values):
+        return conectar_BBDD().update_one(filtro, new_values)
