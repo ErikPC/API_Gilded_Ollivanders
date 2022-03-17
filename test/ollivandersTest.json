@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "622cee580e1e9fdf857f233b"
+  },
+  "name": "Aged-brie",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "_id": {
+    "$oid": "622cee950e1e9fdf857f233c"
+  },
+  "name": "Normal-item",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "_id": {
+    "$oid": "622ceef30e1e9fdf857f233d"
+  },
+  "name": "Conjured",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "_id": {
+    "$oid": "622cef020e1e9fdf857f233e"
+  },
+  "name": "Backstage",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "_id": {
+    "$oid": "622cef150e1e9fdf857f233f"
+  },
+  "name": "Sulfuras",
+  "quality": 80,
+  "sell_in": 0
+}]
