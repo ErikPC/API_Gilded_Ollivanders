@@ -5,7 +5,7 @@ from app import create_app
 from repository.connect import conectar_BBDD
 
 
-@pytest.fixture()
+@pytest.fixture(scope="session")
 def app():
     app = create_app()
     app.config.update(
@@ -17,20 +17,25 @@ def app():
     yield app
 
 
-@pytest.fixture()
+@pytest.fixture(scope="module")
 def client(app):
-    return app.test_client()
+    with app.app_context():
+        with open("test\\repository\\ollivandersTest.json") as f:
+            conectar_BBDD().insert_many(json.load(f))
+
+        yield app.test_client()
+
+        conectar_BBDD().delete_many({})
 
 
-@pytest.fixture()
-def runner(app):
-    return app.test_cli_runner()
+# Esto definia una base de datos que se crea para todos los casos test
+# se ha cambiado por el fixture module=session para que la base de datos
+#  este controlada por cada file
+
+# def pytest_sessionstart(session):
+#     with open("test\\repository\\ollivandersTest.json") as f:
+#         conectar_BBDD().insert_many(json.load(f))
 
 
-def pytest_sessionstart(session):
-    with open("test\ollivandersTest.json") as f:
-        conectar_BBDD().insert_many(json.load(f))
-
-
-def pytest_sessionfinish(session, exitstatus):
-    conectar_BBDD().delete_many({})
+# def pytest_sessionfinish(session, exitstatus):
+#     conectar_BBDD().delete_many({})
