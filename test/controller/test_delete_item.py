@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.test_delete_aged_brie
 def test_delete_aged_brie(client):
     resp = client.delete("/item/Aged-brie/8/5")
     assert resp.status_code == 200
@@ -8,6 +12,7 @@ def test_delete_aged_brie(client):
     }
 
 
+@pytest.mark.test_delete_backstage
 def test_delete_backstage(client):
     resp = client.delete("/item/Backstage/8/5")
     assert resp.status_code == 200
@@ -18,6 +23,7 @@ def test_delete_backstage(client):
     }
 
 
+@pytest.mark.test_delete_normal_item
 def test_delete_normal_item(client):
     resp = client.delete("/item/Normal-item/8/5")
     assert resp.status_code == 200
@@ -28,6 +34,7 @@ def test_delete_normal_item(client):
     }
 
 
+@pytest.mark.test_delete_conjured
 def test_delete_conjured(client):
     resp = client.delete("/item/Conjured/8/5")
     assert resp.status_code == 200
@@ -38,6 +45,7 @@ def test_delete_conjured(client):
     }
 
 
+@pytest.mark.test_delete_sulfuras
 def test_delete_sulfuras(client):
     resp = client.delete("/item/Sulfuras/80/0")
     assert resp.status_code == 200

@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.test_get_aged_brie
 def test_get_aged_brie(client):
     resp = client.get("/item/Aged-brie")
     assert resp.status_code == 200
@@ -5,6 +9,7 @@ def test_get_aged_brie(client):
     assert resp.json == [{"name": "Aged-brie", "quality": 8, "sell_in": 5}]
 
 
+@pytest.mark.test_get_backstage
 def test_get_backstage(client):
     resp = client.get("/item/Backstage")
     assert resp.status_code == 200
@@ -12,6 +17,7 @@ def test_get_backstage(client):
     assert resp.json == [{"name": "Backstage", "quality": 8, "sell_in": 5}]
 
 
+@pytest.mark.test_get_normal_item
 def test_get_normal_item(client):
     resp = client.get("/item/Normal-item")
     assert resp.status_code == 200
@@ -19,6 +25,7 @@ def test_get_normal_item(client):
     assert resp.json == [{"name": "Normal-item", "quality": 8, "sell_in": 5}]
 
 
+@pytest.mark.test_get_conjured
 def test_get_conjured(client):
     resp = client.get("/item/Conjured")
     assert resp.status_code == 200
@@ -26,6 +33,7 @@ def test_get_conjured(client):
     assert resp.json == [{"name": "Conjured", "quality": 8, "sell_in": 5}]
 
 
+@pytest.mark.test_get_sulfuras
 def test_get_sulfuras(client):
     resp = client.get("/item/Sulfuras")
     assert resp.status_code == 200
