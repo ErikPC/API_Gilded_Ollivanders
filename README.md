@@ -2,7 +2,7 @@
 
 ## Introduccion
 
-El objetivo es crear una API REST , en este caso usamos FLask , conectada a una base de datos. Con el repositorio [Ollivanders/GildedRose](https://github.com/ErikPC/DDD_Gilded_Rose) teniamos que añadir los items magicos a la base de datos y realizar el CRUD sobre dichos item.
+El objetivo es crear una API REST , en este caso usamos Flask , conectada a una base de datos. Con el repositorio [Ollivanders/GildedRose](https://github.com/ErikPC/DDD_Gilded_Rose) teniamos que añadir los items magicos a la base de datos y realizar el CRUD sobre dichos item.
 
 ## Objetivo
 
@@ -15,7 +15,7 @@ El objetivo es crear una API REST , en este caso usamos FLask , conectada a una 
 
 ### Conclusion
 
-Ha estado entretenido crear la API REST , empezar con el hello world y luego ir cambiandolo ha ido bastante rodado. A la hora de elegir la BBDD y como convertir los objetos de a JSON ha hecho que dependa de la libreria flask_restuf la cual me ha facilitado bastante el trabajo.
+Ha estado entretenido crear la API REST , empezar con el hello world y luego ir cambiandolo ha ido bastante rodado. A la hora de elegir la BBDD y como convertir los objetos de a JSON ha hecho que dependa de la libreria flask_restful la cual me ha facilitado bastante el trabajo.
 
 Con la conexion a la BBDD con mongoengine deberia cambiar en un futuro ya que han salido warnings de deprecated en los tests. Controlar las dependencias y diferenciarlas de las de desarrollo ha sido más simple de lo esperado , pero si ya hubiera estado apuntando las que instalaba antes seria aun más sencillo.
 
@@ -23,6 +23,6 @@ Los test ha sido más complicado de lo esperado usando el archivo conftest de py
 
 Los test se deberian haber creado antes 🤘😔
 
-La API RES funciona como un camarero
+La API REST funciona como un camarero
 
 <img src="./docs/camarero.png" width=35%>
