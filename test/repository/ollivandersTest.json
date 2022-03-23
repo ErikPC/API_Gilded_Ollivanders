@@ -1,0 +1,21 @@
+[{
+  "name": "Aged-brie",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "name": "Normal-item",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "name": "Conjured",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "name": "Backstage",
+  "quality": 8,
+  "sell_in": 5
+},{
+  "name": "Sulfuras",
+  "quality": 80,
+  "sell_in": 0
+}]
